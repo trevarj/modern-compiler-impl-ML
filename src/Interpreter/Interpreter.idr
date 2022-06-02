@@ -1,4 +1,4 @@
-module Main
+module Interpreter.Interpreter
 
 import Data.List
 import Data.Maybe
