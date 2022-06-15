@@ -28,3 +28,6 @@ and expr =
 
 val maxargs : stm -> int
 val maxargsexpr : expr -> int
+
+(* Interprets a program/statement in this straight-line language *)
+val interp : stm -> unit
