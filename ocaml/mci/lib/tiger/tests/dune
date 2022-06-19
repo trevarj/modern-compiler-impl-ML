@@ -1,0 +1,10 @@
+(library
+ (name tiger_tests)
+ (libraries
+  tiger
+  ppx_expect.config
+  ppx_expect.config_types
+  ppx_expect.common)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test ppx_expect)))
