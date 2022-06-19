@@ -3,6 +3,7 @@ open Lexing
 
 let%test "and" = tokenize (from_string "&") = AND
 let%test "array" = tokenize (from_string "array") = ARRAY
+let%test "assign" = tokenize (from_string ":=") = ASSIGN
 let%test "break" = tokenize (from_string "break") = BREAK
 let%test "colon" = tokenize (from_string ":") = COLON
 let%test "," = tokenize (from_string ",") = COMMA
@@ -114,8 +115,7 @@ let%test "small prog" =
       IDENT "arr1";
       COLON;
       IDENT "arrtype";
-      COLON;
-      EQ;
+      ASSIGN;
       IDENT "arrtype";
       LBRACK;
       INTLIT 10;

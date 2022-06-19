@@ -7,6 +7,7 @@
     type token = 
         | AND
         | ARRAY
+        | ASSIGN
         | BREAK
         | COLON
         | COMMA
@@ -70,6 +71,7 @@ let ctrl_char = ['A'-'Z' '@' '[' '\\' ']' '^' '_' '?']
 rule tokenize = parse
   | "&" { AND }
   | "array" { ARRAY }
+  | ":=" { ASSIGN }
   | "break" { BREAK }
   | ":" { COLON }
   | "," { COMMA }
