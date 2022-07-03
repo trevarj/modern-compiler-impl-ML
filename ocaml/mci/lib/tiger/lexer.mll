@@ -2,55 +2,9 @@
 
 (* header section *)
 {
+    open Parser
     exception SyntaxError of string
-
-    type token = 
-        | AND
-        | ARRAY
-        | ASSIGN
-        | BREAK
-        | COLON
-        | COMMA
-        | DO
-        | DOT
-        | END
-        | EOF
-        | EQ
-        | FOR
-        | FUNCTION
-        | GT
-        | GTEQ
-        | IDENT of string
-        | IF
-        | IN
-        | INT
-        | INTLIT of int
-        | LBRACE
-        | LBRACK
-        | LET
-        | LPAREN
-        | LT
-        | LTEQ
-        | MINUS
-        | NIL
-        | OF
-        | OR
-        | PLUS
-        | RBRACE
-        | RBRACK
-        | RPAREN
-        | SEMICOLON
-        | SLASH
-        | STAR
-        | STRING
-        | STRINGLIT of string
-        | THEN
-        | TYPE
-        | UNIT
-        | VAR
-        | WHILE
-    [@@deriving show]
-    
+  
     (* Helper that assumes a valid caret notation character as an input
     and outputs the control character as a char *)
     let caret_to_char = function
